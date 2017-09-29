@@ -1,14 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Useless Sound Box Control</title>
+    <title>Useless Sound Box</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Useless Sound Box Control</h1>
+    <h1 class="text-center">Useless Sound Box</h1>
 
-    <button onclick="launchSound('philippe')">PHILIPPE</button>
-    <button onclick="launchSound('motus')">MOTUS</button>
-    <button onclick="launchSound('jeanne')">JEANNE</button>
-    <button onclick="launchSound('rouquin')">ROUQUIN</button>
+    <div class="row text-center">
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button type="button" class="btn btn-dark btn-lg btn-block" onclick="launchSound('philippe')">PHILIPPE</button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button type="button" class="btn btn-dark btn-lg btn-block" onclick="launchSound('motus')">MOTUS</button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button type="button" class="btn btn-dark btn-lg btn-block" onclick="launchSound('jeanne')">JEANNE</button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button type="button" class="btn btn-dark btn-lg btn-block" onclick="launchSound('rouquin')">ROUQUIN</button>
+      </div>
+    </div>
 
     <script>
       launchSound = function(id) {
