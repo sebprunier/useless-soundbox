@@ -26,4 +26,4 @@ io.on('connection', (socket) => {
   console.log('sockect.io connected')
 });
 
-server.listen(PORT, () => console.log(`BeatBox listening on port ${PORT}`))
+server.listen(PORT, () => console.log(`Useless SoundBox listening on port ${PORT}`))
