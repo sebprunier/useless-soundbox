@@ -23,6 +23,20 @@
       MOTUS !!!
     </div>
 
+    <audio id="jeanne" onended="onEnded('jeanne')">
+      <source src="sounds/jeanne.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="jeanne-animation" style="display: none;">
+      JEANNE !!!
+    </div>
+
+    <audio id="rouquin" onended="onEnded('rouquin')">
+      <source src="sounds/rouquin.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="rouquin-animation" style="display: none;">
+      ROUQUIN !!!
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var playing = false
