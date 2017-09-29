@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Useless Sound Box</title>
+  </head>
+  <body>
+    <h1>Useless Sound Box</h1>
+
+    <div id="no-animation">
+      Nothing is playing...
+    </div>
+
+    <audio id="philippe" onended="onEnded('philippe')">
+      <source src="sounds/philippe.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="philippe-animation" style="display: none;">
+      PHILIPPE !!!
+    </div>
+
+    <audio id="motus" onended="onEnded('motus')">
+      <source src="sounds/motus.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="motus-animation" style="display: none;">
+      MOTUS !!!
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var playing = false
+
+      var onEnded = function(id) {
+        console.log('Sound ended: ' + id)
+        document.getElementById('no-animation').style.display = 'block';
+        document.getElementById(id + '-animation').style.display = 'none';
+        playing = false
+      }
+
+      fetch('/api/config')
+      .then(function(response) {
+        return response.json()
+      })
+      .then(function(json) {
+        var socketioUri = json.socketioUri
+        console.log('Socket.io URI is: ' + socketioUri)
+        var socket = io.connect(socketioUri);
+        socket.on('play_sound', function (data) {
+          var soundId = data.id
+          var audio = document.getElementById(soundId);
+          if (audio) {
+            if (playing) {
+              console.log('Another sound is playing... Cannot play: ' + soundId)
+            } else {
+              console.log('Playing sound: ' + soundId)
+              playing = true
+              document.getElementById('no-animation').style.display = 'none';
+              document.getElementById(soundId + '-animation').style.display = 'block';
+              audio.play()
+            }
+          }
+        })
+      })
+      .catch(function(error) {
+        console.error('Cannot get configuration!')
+        console.error(error)
+      })
+
+    </script>
+  </body>
+</html>

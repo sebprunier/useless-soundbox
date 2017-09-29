@@ -1,0 +1,19 @@
+{
+  "name": "useless-soundbox",
+  "version": "1.0.0",
+  "description": "Useless SoundBox",
+  "main": "index.js",
+  "repository": "https://github.com/sebprunier/useless-soundbox.git",
+  "author": "Sébastien Prunier",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "socket.io": "^2.0.3"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "^8"
+  }
+}

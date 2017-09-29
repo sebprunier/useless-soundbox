@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Useless Sound Box Control</title>
+  </head>
+  <body>
+    <h1>Useless Sound Box Control</h1>
+
+    <button onclick="launchSound('philippe')">PHILIPPE</button>
+    <button onclick="launchSound('motus')">MOTUS</button>
+
+    <script>
+      launchSound = function(id) {
+        console.log('Send event to play sound: ' + id)
+        fetch('/api/play_sound/' + id)
+        .then(function(response) {
+          console.log('Call to play_sound API successfull!')
+        })
+        .catch(function(error) {
+          console.error('Error while calling play_sound API')
+          console.error(error)
+        })
+      }
+    </script>
+  </body>
+</html>
