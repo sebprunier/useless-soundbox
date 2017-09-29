@@ -1,40 +1,49 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>Useless Sound Box</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Useless Sound Box</h1>
+    <h1 class="text-center">Useless Sound Box</h1>
 
-    <div id="no-animation">
-      Nothing is playing...
+    <div id="no-animation" class="text-center" style="margin-top: 50px;">
+      <h2>Nothing is playing...</h2>
+      <img src="images/nothing.png" style="max-width: 200px;" />
     </div>
 
     <audio id="philippe" onended="onEnded('philippe')">
       <source src="sounds/philippe.mp3" type="audio/mpeg" />
     </audio>
-    <div id="philippe-animation" style="display: none;">
-      PHILIPPE !!!
+    <div id="philippe-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Philippe ! Enculé !!!</h2>
+      <img src="images/philippe.jpg" style="max-width: 400px;" />
     </div>
 
     <audio id="motus" onended="onEnded('motus')">
       <source src="sounds/motus.mp3" type="audio/mpeg" />
     </audio>
-    <div id="motus-animation" style="display: none;">
-      MOTUS !!!
+    <div id="motus-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Oh ... Oh oh oh oh :-(</h2>
+      <img src="images/motus.jpg" style="max-width: 400px;" />
     </div>
 
     <audio id="jeanne" onended="onEnded('jeanne')">
       <source src="sounds/jeanne.mp3" type="audio/mpeg" />
     </audio>
-    <div id="jeanne-animation" style="display: none;">
-      JEANNE !!!
+    <div id="jeanne-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Jeanne ! Au secours !!!</h2>
+      <img src="images/jeanne.jpg" style="max-width: 400px;" />
     </div>
 
     <audio id="rouquin" onended="onEnded('rouquin')">
       <source src="sounds/rouquin.mp3" type="audio/mpeg" />
     </audio>
-    <div id="rouquin-animation" style="display: none;">
-      ROUQUIN !!!
+    <div id="rouquin-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>J'vais t'faire courir moi le rouquin !</h2>
+      <img src="images/rouquin.jpg" style="max-width: 400px;" />
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
