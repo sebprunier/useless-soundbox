@@ -5,13 +5,13 @@ const server = require('http').Server(app)
 const io = require('socket.io')(server)
 
 const PORT = process.env.PORT || 3000
-const NODE_ENV = process.env.NODE_ENV || 'development'
+const SOCKETIO_URI = process.env.SOCKETIO_URI || `http://localhost:${PORT}`
 
 app.use(express.static('public'))
 
 app.get('/api/config', (req, res) => {
   res.json({
-    socketioUri: NODE_ENV === 'production' ? 'http://localhost' : `http://localhost:${PORT}`
+    socketioUri: SOCKETIO_URI
   })
 })
 
