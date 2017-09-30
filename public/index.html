@@ -182,7 +182,7 @@
 
       var onEnded = function(id) {
         console.log('Sound ended: ' + id)
-        document.getElementById('btn-play-' + id).className = 'btn btn-info btn-lg btn-player';
+        document.getElementById('btn-play-' + id).className = 'btn btn-player';
         document.getElementById('icon-playing-' + id).style.display = 'none';
         document.getElementById('icon-play-' + id).style.display = 'inline';
         playing = false
@@ -201,7 +201,7 @@
             playingAudio.currentTime = 0;
             if (id !== playingId) {
               playingId = id
-              document.getElementById('btn-play-' + id).className = 'btn btn-player';
+              document.getElementById('btn-play-' + id).className = 'btn btn-player btn-active';
               document.getElementById('icon-play-' + id).style.display = 'none';
               document.getElementById('icon-playing-' + id).style.display = 'inline';
               audio.play()
@@ -212,7 +212,7 @@
             console.log('Playing sound: ' + id)
             playing = true
             playingId = id
-            document.getElementById('btn-play-' + id).className = 'btn btn-player';
+            document.getElementById('btn-play-' + id).className = 'btn btn-player btn-active';
             document.getElementById('icon-play-' + id).style.display = 'none';
             document.getElementById('icon-playing-' + id).style.display = 'inline';
             audio.play()
