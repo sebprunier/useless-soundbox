@@ -64,6 +64,7 @@ h1 span{
   box-shadow:0 0 5px #000;
   border-radius:8px;
   background:#000;
+  transition: all .3s ease-in;
 }
 .btn-player img{
   width: 100%;
@@ -93,6 +94,9 @@ h1 span{
     font-size: 70px;
   }
 }
+.fa-music:before{
+  color:#ED5564;
+}
 .btn-player p{
   position:absolute;
   bottom:0;
@@ -118,4 +122,13 @@ h1 span{
 }
 .btn:focus{
   box-shadow:0 0 20px #000;
+  transform: scale(1.1);
 }
+.btn:focus p{
+  color:#ED5564;
+}
+.btn-active{
+  transform: scale(1.1);
+}
+
+#ED5564
