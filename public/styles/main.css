@@ -7,14 +7,12 @@
 html{
     height: 100%;
 }
-
 body{
   min-height: 100%;
   font-family: 'Fjalla One', sans-serif;
   background: #38555d;
   padding-top:30px;
 }
-
 .useless-sound-wrapper{
 
 }
@@ -43,7 +41,6 @@ h1 span{
     margin-bottom:85px;
   }
 }
-
 .btn-container{
   position:relative;
   margin-bottom:30px;
@@ -53,7 +50,6 @@ h1 span{
   display: block;
   content: '';
 }
-
 .btn-player {
   text-align: left !important;
   width: 100%;
@@ -69,7 +65,6 @@ h1 span{
   border-radius:8px;
   background:#000;
 }
-
 .btn-player img{
   width: 100%;
   height:100%;
@@ -90,7 +85,14 @@ h1 span{
 .btn-player i:before {
   font-size: 6vw;
 }
-
+@media (min-width:1200px) {
+  .btn-player i{
+    height:90px;
+  }
+  .btn-player i:before {
+    font-size: 70px;
+  }
+}
 .btn-player p{
   position:absolute;
   bottom:0;
@@ -104,7 +106,12 @@ h1 span{
   line-height:2.3vw;
   padding:1vw;
 }
-
+@media (min-width:1200px) {
+  .btn-player p{
+    font-size:25px;
+    padding:10px;
+  }
+}
 .btn-info:hover{
   background-color: transparent;
   border-color: transparent;
