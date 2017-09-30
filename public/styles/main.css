@@ -18,10 +18,32 @@ body{
 .useless-sound-wrapper{
 
 }
+.page-header{
+  margin-bottom:40px;
+  text-align:center;
+}
 h1{
   color:#fff;
-  margin-bottom:40px;
+  display:inline-block;
+  margin-bottom:0;
+  background:url("../images/jukebox.png") no-repeat center;
+  background-size:30px auto;
 }
+h1 span{
+  display:inline-block;
+  margin-bottom:50px;
+}
+@media (min-width:992px) {
+  h1{
+    font-size:80px;
+    background:url("../images/jukebox.png") no-repeat center;
+    background-size:50px auto;
+  }
+  h1 span{
+    margin-bottom:85px;
+  }
+}
+
 .btn-container{
   position:relative;
   margin-bottom:30px;
