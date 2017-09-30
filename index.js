@@ -8,9 +8,10 @@ const PORT = process.env.PORT || 3000
 const SOCKETIO_URI = process.env.SOCKETIO_URI || `http://localhost:${PORT}`
 
 const REDIS_URL = process.env.REDIS_URL
+const redis = require('redis')
+const redisClient = null
 if (REDIS_URL) {
-  const redis = require('redis')
-  const redisClient = redis.createClient({url : REDIS_URL})
+  redisClient = redis.createClient({url : REDIS_URL})
   redisClient.on('error', (error) => {
     console.error('Redis client error');
     console.error(error);
@@ -28,7 +29,7 @@ app.get('/api/config', (req, res) => {
 app.post('/api/track/play_sound/:id', (req, res) => {
   const soundId = req.params.id
   console.log(`+1 for sound ${soundId}`)
-  if (REDIS_URL) {
+  if (redisClient) {
     redisClient.incr(soundId, redisClient.print)
   }
   res.status(201).send()
