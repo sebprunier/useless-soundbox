@@ -7,8 +7,13 @@ const io = require('socket.io')(server)
 const PORT = process.env.PORT || 3000
 const SOCKETIO_URI = process.env.SOCKETIO_URI || `http://localhost:${PORT}`
 
-const redis = require("redis")
-const redisClient = redis.createClient()
+const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379'
+const redis = require('redis')
+const redisClient = redis.createClient({url : REDIS_URL})
+redisClient.on('error', (error) => {
+  console.error('Redis client error');
+  console.error(error);
+});
 
 app.use(express.static('public'))
 
