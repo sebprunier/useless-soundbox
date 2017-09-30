@@ -58,6 +58,15 @@
     <audio id="jonathan" onended="onEnded('jonathan')">
       <source src="sounds/jonathan.mp3" type="audio/mpeg" />
     </audio>
+    <audio id="the-final-countdown" onended="onEnded('the-final-countdown')">
+      <source src="sounds/the-final-countdown.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="allez-viens" onended="onEnded('allez-viens')">
+      <source src="sounds/allez-viens.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="jean-michel-sancowl" onended="onEnded('jean-michel-sancowl')">
+      <source src="sounds/jean-michel-sancowl.mp3" type="audio/mpeg" />
+    </audio>
 
     <div class="useless-sound-wrapper">
       <div class="container">
@@ -169,6 +178,36 @@
                 <i id="icon-playing-jonathan" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
                 <img src="images/jonathan.jpg" alt="JONATHAN"/>
                 <p>JONATHAN</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-the-final-countdown" type="button" class="btn btn-player" onclick="launchSound('the-final-countdown')">
+                <i id="icon-play-the-final-countdown" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-the-final-countdown" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/the-final-countdown.png" alt="THE FINAL COUNTDOWN"/>
+                <p>COUNTDOWN</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-allez-viens" type="button" class="btn btn-player" onclick="launchSound('allez-viens')">
+                <i id="icon-play-allez-viens" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-allez-viens" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/allez-viens.png" alt="ALLEZ VIENS"/>
+                <p>ALLEZ VIENS</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-jean-michel-sancowl" type="button" class="btn btn-player" onclick="launchSound('jean-michel-sancowl')">
+                <i id="icon-play-jean-michel-sancowl" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-jean-michel-sancowl" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/jean-michel-sancowl.png" alt="JEAN-MICHEL SANCOWL"/>
+                <p>JM SANCOWL</p>
               </button>
             </div>
           </div>
