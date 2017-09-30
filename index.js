@@ -48,7 +48,7 @@ app.get('/api/stats', (req, res) => {
           Object.keys(obj).map(key => {
             return {
               sound: key,
-              hits: obj[key]
+              hits: parseInt(obj[key], 10)
             }
           }).sort((s1, s2) => {
             return s1.hits < s2.hits
