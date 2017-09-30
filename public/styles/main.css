@@ -4,18 +4,32 @@
   outline:1px solid red;
 }
 
-.useless-sound-wrapper{
-  outline:1px solid red;
+html{
+    height: 100%;
 }
 
+body{
+  min-height: 100%;
+  font-family: 'Fjalla One', sans-serif;
+  background: #38555d;
+  padding-top:30px;
+}
+
+.useless-sound-wrapper{
+
+}
+h1{
+  color:#fff;
+  margin-bottom:40px;
+}
 .btn-container{
-  outline:1px solid red;
+  position:relative;
+  margin-bottom:30px;
 }
 .btn-container:after{
   padding-top: 100%;
   display: block;
   content: '';
-  position:relative;
 }
 
 .btn-player {
@@ -26,8 +40,53 @@
   right:0;
   bottom:0;
   left:0;
+  overflow:hidden;
+  border:none;
+  padding:0;
+  box-shadow:0 0 5px #000;
+  border-radius:8px;
+  background:#000;
 }
 
+.btn-player img{
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
 .btn-player i {
-  margin-right: 16px;
+  position:absolute;
+  width: 100%;
+  height:23px;
+  top: 0;
+  right:0;
+  bottom:0;
+  left:0;
+  margin:auto;
+  text-align:center;
+  color:#fff;
+}
+.btn-player i:before {
+  font-size: 20px;
+}
+
+.btn-player p{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  text-align:center;
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-size:2.3vw;
+  line-height:2.3vw;
+  padding:1vw;
+}
+
+.btn-info:hover{
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn:focus{
+  box-shadow:0 0 20px #000;
 }
