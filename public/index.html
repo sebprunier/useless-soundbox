@@ -5,143 +5,152 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
     <h1 class="text-center">Useless Sound Box</h1>
 
-    <div id="no-animation" class="text-center" style="margin-top: 50px;">
-      <h2>Nothing is playing...</h2>
-      <img src="images/nothing.png" style="max-width: 200px;" />
-    </div>
-
     <audio id="philippe" onended="onEnded('philippe')">
       <source src="sounds/philippe.mp3" type="audio/mpeg" />
     </audio>
-    <div id="philippe-animation" class="text-center" style="margin-top: 50px; display: none;">
-      <h2>Philippe ! Enculé !!!</h2>
-      <img src="images/philippe.jpg" style="max-width: 800px;" />
-    </div>
-
     <audio id="motus" onended="onEnded('motus')">
       <source src="sounds/motus.mp3" type="audio/mpeg" />
     </audio>
-    <div id="motus-animation" class="text-center" style="margin-top: 50px; display: none;">
-      <h2>Oh ... Oh oh oh oh :-(</h2>
-      <img src="images/motus.jpg" style="max-width: 800px;" />
-    </div>
-
     <audio id="jeanne" onended="onEnded('jeanne')">
       <source src="sounds/jeanne.mp3" type="audio/mpeg" />
     </audio>
-    <div id="jeanne-animation" class="text-center" style="margin-top: 50px; display: none;">
-      <h2>Jeanne ! Au secours !!!</h2>
-      <img src="images/jeanne.jpg" style="max-width: 800px;" />
-    </div>
-
     <audio id="rouquin" onended="onEnded('rouquin')">
       <source src="sounds/rouquin.mp3" type="audio/mpeg" />
     </audio>
-    <div id="rouquin-animation" class="text-center" style="margin-top: 50px; display: none;">
-      <h2>J'vais t'faire courir moi le rouquin !</h2>
-      <img src="images/rouquin.jpg" style="max-width: 800px;" />
-    </div>
-
     <audio id="ah" onended="onEnded('ah')">
       <source src="sounds/ah.mp3" type="audio/mpeg" />
     </audio>
-    <div id="ah-animation" class="text-center" style="margin-top: 50px; display: none;">
-      <h2>Ah !</h2>
-      <img src="images/ah.jpg" style="max-width: 800px;" />
-    </div>
-
     <audio id="baptiste" onended="onEnded('baptiste')">
       <source src="sounds/baptiste.mp3" type="audio/mpeg" />
     </audio>
-    <div id="baptiste-animation" class="text-center" style="margin-top: 50px; display: none;">
-      <h2>Mais si j'suis très net...</h2>
-      <img src="images/baptiste.jpg" style="max-width: 800px;" />
-    </div>
-
     <audio id="cafard" onended="onEnded('cafard')">
       <source src="sounds/cafard.mp3" type="audio/mpeg" />
     </audio>
-    <div id="cafard-animation" class="text-center" style="margin-top: 50px; display: none;">
-      <h2>Ali Ben c'est un cafard !</h2>
-      <img src="images/cafard.jpg" style="max-width: 800px;" />
-    </div>
-
     <audio id="souffrir" onended="onEnded('souffrir')">
       <source src="sounds/souffrir.mp3" type="audio/mpeg" />
     </audio>
-    <div id="souffrir-animation" class="text-center" style="margin-top: 50px; display: none;">
-      <h2>J'suis pas venue ici pour souffir ok !</h2>
-      <img src="images/souffrir.jpg" style="max-width: 800px;" />
-    </div>
-
     <audio id="universal" onended="onEnded('universal')">
       <source src="sounds/universal.mp3" type="audio/mpeg" />
     </audio>
-    <div id="universal-animation" class="text-center" style="margin-top: 50px; display: none;">
-      <h2>Générique !</h2>
-      <img src="images/universal.jpg" style="max-width: 800px;" />
-    </div>
-
     <audio id="centuryfox" onended="onEnded('centuryfox')">
       <source src="sounds/centuryfox.mp3" type="audio/mpeg" />
     </audio>
-    <div id="centuryfox-animation" class="text-center" style="margin-top: 50px; display: none;">
-      <h2>20th Century Fox !</h2>
-      <img src="images/centuryfox.jpg" style="max-width: 800px;" />
-    </div>
-
     <audio id="jonathan" onended="onEnded('jonathan')">
       <source src="sounds/jonathan.mp3" type="audio/mpeg" />
     </audio>
-    <div id="jonathan-animation" class="text-center" style="margin-top: 50px; display: none;">
-      <h2>Qu'est qui est jaune et qui attend ?</h2>
-      <img src="images/jonathan.jpg" style="max-width: 800px;" />
+
+    <div class="row text-center">
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button id="btn-play-philippe" type="button" class="btn btn-info btn-lg btn-player" onclick="launchSound('philippe')">
+          <i id="icon-play-philippe" class="fa fa-play" aria-hidden="true"></i>
+          <i id="icon-playing-philippe" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+          PHILIPPE
+        </button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button id="btn-play-motus" type="button" class="btn btn-info btn-lg btn-player" onclick="launchSound('motus')">
+          <i id="icon-play-motus" class="fa fa-play" aria-hidden="true"></i>
+          <i id="icon-playing-motus" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+          MOTUS
+        </button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button id="btn-play-jeanne" type="button" class="btn btn-info btn-lg btn-player" onclick="launchSound('jeanne')">
+          <i id="icon-play-jeanne" class="fa fa-play" aria-hidden="true"></i>
+          <i id="icon-playing-jeanne" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+          JEANNE
+        </button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button id="btn-play-rouquin" type="button" class="btn btn-info btn-lg btn-player" onclick="launchSound('rouquin')">
+          <i id="icon-play-rouquin" class="fa fa-play" aria-hidden="true"></i>
+          <i id="icon-playing-rouquin" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+          ROUQUIN
+        </button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button id="btn-play-ah" type="button" class="btn btn-info btn-lg btn-player" onclick="launchSound('ah')">
+          <i id="icon-play-ah" class="fa fa-play" aria-hidden="true"></i>
+          <i id="icon-playing-ah" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+          AH
+        </button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button id="btn-play-souffrir" type="button" class="btn btn-info btn-lg btn-player" onclick="launchSound('souffrir')">
+          <i id="icon-play-souffrir" class="fa fa-play" aria-hidden="true"></i>
+          <i id="icon-playing-souffrir" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+          SOUFFRIR
+        </button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button id="btn-play-cafard" type="button" class="btn btn-info btn-lg btn-player" onclick="launchSound('cafard')">
+          <i id="icon-play-cafard" class="fa fa-play" aria-hidden="true"></i>
+          <i id="icon-playing-cafard" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+          CAFARD
+        </button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button id="btn-play-universal" type="button" class="btn btn-info btn-lg btn-player" onclick="launchSound('universal')">
+          <i id="icon-play-universal" class="fa fa-play" aria-hidden="true"></i>
+          <i id="icon-playing-universal" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+          UNIVERSAL
+        </button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button id="btn-play-baptiste" type="button" class="btn btn-info btn-lg btn-player" onclick="launchSound('baptiste')">
+          <i id="icon-play-baptiste" class="fa fa-play" aria-hidden="true"></i>
+          <i id="icon-playing-baptiste" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+          BAPTISTE
+        </button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button id="btn-play-centuryfox" type="button" class="btn btn-info btn-lg btn-player" onclick="launchSound('centuryfox')">
+          <i id="icon-play-centuryfox" class="fa fa-play" aria-hidden="true"></i>
+          <i id="icon-playing-centuryfox" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+          CENTURYFOX
+        </button>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="padding: 5px">
+        <button id="btn-play-jonathan" type="button" class="btn btn-info btn-lg btn-player" onclick="launchSound('jonathan')">
+          <i id="icon-play-jonathan" class="fa fa-play" aria-hidden="true"></i>
+          <i id="icon-playing-jonathan" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+          JONATHAN
+        </button>
+      </div>
     </div>
 
-    <script src="/socket.io/socket.io.js"></script>
     <script>
       var playing = false
 
       var onEnded = function(id) {
         console.log('Sound ended: ' + id)
-        document.getElementById('no-animation').style.display = 'block';
-        document.getElementById(id + '-animation').style.display = 'none';
+        document.getElementById('btn-play-' + id).className = 'btn btn-info btn-lg btn-player';
+        document.getElementById('icon-playing-' + id).style.display = 'none';
+        document.getElementById('icon-play-' + id).style.display = 'inline';
         playing = false
       }
 
-      fetch('/api/config')
-      .then(function(response) {
-        return response.json()
-      })
-      .then(function(json) {
-        var socketioUri = json.socketioUri
-        console.log('Socket.io URI is: ' + socketioUri)
-        var socket = io.connect(socketioUri);
-        socket.on('play_sound', function (data) {
-          var soundId = data.id
-          var audio = document.getElementById(soundId);
-          if (audio) {
-            if (playing) {
-              console.log('Another sound is playing... Cannot play: ' + soundId)
-            } else {
-              console.log('Playing sound: ' + soundId)
-              playing = true
-              document.getElementById('no-animation').style.display = 'none';
-              document.getElementById(soundId + '-animation').style.display = 'block';
-              audio.play()
-            }
+      launchSound = function(id) {
+        var audio = document.getElementById(id);
+        if (audio) {
+          if (playing) {
+            console.log('Another sound is playing... Cannot play: ' + id)
+          } else {
+            console.log('Playing sound: ' + id)
+            playing = true
+            document.getElementById('btn-play-' + id).className = 'btn btn-warning btn-lg btn-player';
+            document.getElementById('icon-play-' + id).style.display = 'none';
+            document.getElementById('icon-playing-' + id).style.display = 'inline';
+            audio.play()
           }
-        })
-      })
-      .catch(function(error) {
-        console.error('Cannot get configuration!')
-        console.error(error)
-      })
-
+        }
+      }
     </script>
   </body>
 </html>

@@ -1,0 +1,9 @@
+/* Custom style here */
+.btn-player {
+  text-align: left !important;
+  width: 80%;
+}
+
+.btn-player i {
+  margin-right: 16px;
+}

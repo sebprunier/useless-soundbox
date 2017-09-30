@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Useless Sound Box</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1 class="text-center">Useless Sound Box</h1>
+
+    <div id="no-animation" class="text-center" style="margin-top: 50px;">
+      <h2>Nothing is playing...</h2>
+      <img src="../images/nothing.png" style="max-width: 200px;" />
+    </div>
+
+    <audio id="philippe" onended="onEnded('philippe')">
+      <source src="../sounds/philippe.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="philippe-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Philippe ! Enculé !!!</h2>
+      <img src="../images/philippe.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="motus" onended="onEnded('motus')">
+      <source src="../sounds/motus.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="motus-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Oh ... Oh oh oh oh :-(</h2>
+      <img src="../images/motus.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="jeanne" onended="onEnded('jeanne')">
+      <source src="../sounds/jeanne.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="jeanne-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Jeanne ! Au secours !!!</h2>
+      <img src="../images/jeanne.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="rouquin" onended="onEnded('rouquin')">
+      <source src="../sounds/rouquin.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="rouquin-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>J'vais t'faire courir moi le rouquin !</h2>
+      <img src="../images/rouquin.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="ah" onended="onEnded('ah')">
+      <source src="../sounds/ah.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="ah-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Ah !</h2>
+      <img src="../images/ah.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="baptiste" onended="onEnded('baptiste')">
+      <source src="../sounds/baptiste.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="baptiste-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Mais si j'suis très net...</h2>
+      <img src="../images/baptiste.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="cafard" onended="onEnded('cafard')">
+      <source src="../sounds/cafard.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="cafard-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Ali Ben c'est un cafard !</h2>
+      <img src="../images/cafard.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="souffrir" onended="onEnded('souffrir')">
+      <source src="../sounds/souffrir.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="souffrir-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>J'suis pas venue ici pour souffir ok !</h2>
+      <img src="../images/souffrir.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="universal" onended="onEnded('universal')">
+      <source src="../sounds/universal.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="universal-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Générique !</h2>
+      <img src="../images/universal.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="centuryfox" onended="onEnded('centuryfox')">
+      <source src="../sounds/centuryfox.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="centuryfox-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>20th Century Fox !</h2>
+      <img src="../images/centuryfox.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="jonathan" onended="onEnded('jonathan')">
+      <source src="../sounds/jonathan.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="jonathan-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Qu'est qui est jaune et qui attend ?</h2>
+      <img src="../images/jonathan.jpg" style="max-width: 800px;" />
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var playing = false
+
+      var onEnded = function(id) {
+        console.log('Sound ended: ' + id)
+        document.getElementById('no-animation').style.display = 'block';
+        document.getElementById(id + '-animation').style.display = 'none';
+        playing = false
+      }
+
+      fetch('/api/config')
+      .then(function(response) {
+        return response.json()
+      })
+      .then(function(json) {
+        var socketioUri = json.socketioUri
+        console.log('Socket.io URI is: ' + socketioUri)
+        var socket = io.connect(socketioUri);
+        socket.on('play_sound', function (data) {
+          var soundId = data.id
+          var audio = document.getElementById(soundId);
+          if (audio) {
+            if (playing) {
+              console.log('Another sound is playing... Cannot play: ' + soundId)
+            } else {
+              console.log('Playing sound: ' + soundId)
+              playing = true
+              document.getElementById('no-animation').style.display = 'none';
+              document.getElementById(soundId + '-animation').style.display = 'block';
+              audio.play()
+            }
+          }
+        })
+      })
+      .catch(function(error) {
+        console.error('Cannot get configuration!')
+        console.error(error)
+      })
+
+    </script>
+  </body>
+</html>
