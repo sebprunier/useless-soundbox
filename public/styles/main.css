@@ -86,12 +86,12 @@ h1 span{
 .btn-player i:before {
   font-size: 6vw;
 }
-@media (min-width:1200px) {
+@media (min-width:992px) {
   .btn-player i{
-    height:90px;
+    height:65px;
   }
   .btn-player i:before {
-    font-size: 70px;
+    font-size: 45px;
   }
 }
 .fa-music:before{
@@ -112,10 +112,16 @@ h1 span{
   border-bottom-left-radius:7px;
   border-bottom-right-radius:7px;
 }
+@media (min-width:992px) {
+  .btn-player p{
+    padding:5px;
+    font-size:18px;
+  }
+}
 @media (min-width:1200px) {
   .btn-player p{
-    font-size:25px;
-    padding:10px;
+    font-size:22px;
+    padding:5px;
   }
 }
 .btn-info:hover{
@@ -125,6 +131,16 @@ h1 span{
 .btn-active{
   box-shadow:0 0 20px #000;
   transform: scale(1.3);
+}
+@media (min-width:768px) {
+  .btn-active{
+    transform: scale(1.2);
+  }
+}
+@media (min-width:1200px) {
+  .btn-active{
+    transform: scale(1.1);
+  }
 }
 .btn-active p{
   color:#ED5564;
