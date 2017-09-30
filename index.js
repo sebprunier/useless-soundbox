@@ -9,7 +9,7 @@ const SOCKETIO_URI = process.env.SOCKETIO_URI || `http://localhost:${PORT}`
 
 const REDIS_URL = process.env.REDIS_URL
 const redis = require('redis')
-const redisClient = null
+let redisClient = null
 if (REDIS_URL) {
   redisClient = redis.createClient({url : REDIS_URL})
   redisClient.on('error', (error) => {
