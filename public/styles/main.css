@@ -61,10 +61,10 @@ h1 span{
   overflow:hidden;
   border:none;
   padding:0;
-  box-shadow:0 0 5px #000;
+  box-shadow:0 0 8px #000;
   border-radius:8px;
-  background:#000;
-  transition: all .3s ease-in;
+  background:transparent;
+  transition: all .2s ease-out;
 }
 .btn-player img{
   width: 100%;
@@ -120,15 +120,18 @@ h1 span{
   background-color: transparent;
   border-color: transparent;
 }
-.btn:focus{
+.btn-active{
   box-shadow:0 0 20px #000;
   transform: scale(1.1);
 }
-.btn:focus p{
+.btn-active p{
   color:#ED5564;
 }
-.btn-active{
-  transform: scale(1.1);
+.btn.focus, .btn-focus{
+  box-shadow:0 0 20px #000 !important;
 }
 
-#ED5564
+.btn.focus, .btn:focus {
+  outline: 0;
+  box-shadow: 0 0 30px rgba(0,0,0,1);
+}
