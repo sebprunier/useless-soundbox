@@ -188,6 +188,12 @@
         playing = false
       }
 
+      var trackSound = function(id) {
+        fetch('/api/track/play_sound/' + id, {method: 'POST'})
+        .then(response => console.log(id + ' tracked!'))
+        .catch(error => console.error(error))
+      }
+
       launchSound = function(id) {
         var audio = document.getElementById(id)
         if (audio) {
@@ -205,6 +211,7 @@
               document.getElementById('icon-play-' + id).style.display = 'none';
               document.getElementById('icon-playing-' + id).style.display = 'inline';
               audio.play()
+              trackSound(id)
             } else {
               playing = false
             }
@@ -215,6 +222,7 @@
             document.getElementById('btn-play-' + id).className = 'btn btn-player btn-active';
             document.getElementById('icon-play-' + id).style.display = 'none';
             document.getElementById('icon-playing-' + id).style.display = 'inline';
+            trackSound(id)
             audio.play()
           }
         }
