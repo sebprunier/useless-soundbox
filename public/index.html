@@ -86,6 +86,22 @@
       <img src="images/universal.jpg" style="max-width: 800px;" />
     </div>
 
+    <audio id="centuryfox" onended="onEnded('centuryfox')">
+      <source src="sounds/centuryfox.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="centuryfox-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>20th Century Fox !</h2>
+      <img src="images/centuryfox.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="jonathan" onended="onEnded('jonathan')">
+      <source src="sounds/jonathan.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="jonathan-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Qu'est qui est jaune et qui attend ?</h2>
+      <img src="images/jonathan.jpg" style="max-width: 800px;" />
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var playing = false
