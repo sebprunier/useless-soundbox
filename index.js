@@ -31,7 +31,7 @@ app.post('/api/track/play_sound/:id', (req, res) => {
   const soundId = req.params.id
   console.log(`+1 for sound ${soundId}`)
   if (redisClient) {
-    redisClient.incr(soundId, redisClient.print)
+    redisClient.hincrby('soundbox:sounds_hits', soundId, 1, redisClient.print)
   }
   res.status(201).send()
 })
