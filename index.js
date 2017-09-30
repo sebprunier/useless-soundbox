@@ -29,11 +29,36 @@ app.get('/api/config', (req, res) => {
 
 app.post('/api/track/play_sound/:id', (req, res) => {
   const soundId = req.params.id
-  console.log(`+1 for sound ${soundId}`)
   if (redisClient) {
+    console.log(`+1 for sound ${soundId}`)
     redisClient.hincrby('soundbox:sounds_hits', soundId, 1, redisClient.print)
   }
   res.status(201).send()
+})
+
+app.get('/api/stats', (req, res) => {
+  if (redisClient) {
+    redisClient.hgetall('soundbox:sounds_hits', (err, obj) => {
+      if (err) {
+        console.error(err)
+        res.status(500).send('Error while getting stats: ' + error.message)
+      } else {
+        console.log(obj)
+        res.json(
+          Object.keys(obj).map(key => {
+            return {
+              sound: key,
+              hits: obj[key]
+            }
+          }).sort((s1, s2) => {
+            return s1.hits < s2.hits
+          })
+        )
+      }
+    })
+  } else {
+    res.status(503).send('Service Unavailable')
+  }
 })
 
 app.get('/api/play_sound/:id', (req, res) => {
