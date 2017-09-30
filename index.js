@@ -7,13 +7,16 @@ const io = require('socket.io')(server)
 const PORT = process.env.PORT || 3000
 const SOCKETIO_URI = process.env.SOCKETIO_URI || `http://localhost:${PORT}`
 
-const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379'
+const REDIS_URL = process.env.REDIS_URL
 const redis = require('redis')
-const redisClient = redis.createClient({url : REDIS_URL})
-redisClient.on('error', (error) => {
-  console.error('Redis client error');
-  console.error(error);
-});
+const redisClient = null
+if (REDIS_URL) {
+  redisClient = redis.createClient({url : REDIS_URL})
+  redisClient.on('error', (error) => {
+    console.error('Redis client error');
+    console.error(error);
+  });
+}
 
 app.use(express.static('public'))
 
@@ -26,7 +29,9 @@ app.get('/api/config', (req, res) => {
 app.post('/api/track/play_sound/:id', (req, res) => {
   const soundId = req.params.id
   console.log(`+1 for sound ${soundId}`)
-  redisClient.incr(soundId, redisClient.print)
+  if (redisClient) {
+    redisClient.incr(soundId, redisClient.print)
+  }
   res.status(201).send()
 })
 
