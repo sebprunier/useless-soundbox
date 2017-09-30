@@ -1,7 +1,31 @@
 /* Custom style here */
+
+.hello{
+  outline:1px solid red;
+}
+
+.useless-sound-wrapper{
+  outline:1px solid red;
+}
+
+.btn-container{
+  outline:1px solid red;
+}
+.btn-container:after{
+  padding-top: 100%;
+  display: block;
+  content: '';
+  position:relative;
+}
+
 .btn-player {
   text-align: left !important;
-  width: 80%;
+  width: 100%;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
 }
 
 .btn-player i {
