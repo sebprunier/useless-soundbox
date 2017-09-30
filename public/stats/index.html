@@ -27,16 +27,10 @@
       fetch('/api/stats')
       .then(response => response.json())
       .then(json => {
-        json.forEach(item => {
-          var tr = document.createElement("tr")
-          var td1 = document.createElement("td")
-          td1.textContent = item.sound
-          var td2 = document.createElement("td")
-          td2.textContent = item.hits
-          tr.appendChild(td1)
-          tr.appendChild(td2)
-          stats.appendChild(tr)
-        })
+        var statRows = json.map(item => {
+          return '<tr><td>'+item.sound+'</td><td>'+item.hits+'</td></tr>'
+        }).join('\n')
+        stats.innerHTML = statRows
       })
       .catch(error => {
         console.error('Cannot get stats')

@@ -43,7 +43,6 @@ app.get('/api/stats', (req, res) => {
         console.error(err)
         res.status(500).send('Error while getting stats: ' + error.message)
       } else {
-        console.log(obj)
         res.json(
           Object.keys(obj).map(key => {
             return {
@@ -51,7 +50,7 @@ app.get('/api/stats', (req, res) => {
               hits: parseInt(obj[key], 10)
             }
           }).sort((s1, s2) => {
-            return s1.hits < s2.hits
+            return s2.hits - s1.hits
           })
         )
       }
