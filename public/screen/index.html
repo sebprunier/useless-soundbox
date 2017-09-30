@@ -102,6 +102,30 @@
       <img src="../images/jonathan.jpg" style="max-width: 800px;" />
     </div>
 
+    <audio id="sancowl" onended="onEnded('sancowl')">
+      <source src="../sounds/sancowl.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="sancowl-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Jean-Michel Sancowl</h2>
+      <img src="../images/sancowl.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="allezviens" onended="onEnded('allezviens')">
+      <source src="../sounds/allezviens.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="allezviens-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Allez... Viens !</h2>
+      <img src="../images/allezviens.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="countdown" onended="onEnded('countdown')">
+      <source src="../sounds/countdown.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="countdown-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>The Final Countdown</h2>
+      <img src="../images/countdown.jpg" style="max-width: 800px;" />
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var playing = false
