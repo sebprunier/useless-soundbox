@@ -127,6 +127,7 @@
 
     <script>
       var playing = false
+      var playingId = null
 
       var onEnded = function(id) {
         console.log('Sound ended: ' + id)
@@ -137,13 +138,29 @@
       }
 
       launchSound = function(id) {
-        var audio = document.getElementById(id);
+        var audio = document.getElementById(id)
         if (audio) {
           if (playing) {
-            console.log('Another sound is playing... Cannot play: ' + id)
+            console.log('Another sound is playing: ' + playingId)
+            var playingAudio = document.getElementById(playingId)
+            document.getElementById('btn-play-' + playingId).className = 'btn btn-info btn-lg btn-player';
+            document.getElementById('icon-playing-' + playingId).style.display = 'none';
+            document.getElementById('icon-play-' + playingId).style.display = 'inline';
+            playingAudio.pause()
+            playingAudio.currentTime = 0;
+            if (id !== playingId) {
+              playingId = id
+              document.getElementById('btn-play-' + id).className = 'btn btn-warning btn-lg btn-player';
+              document.getElementById('icon-play-' + id).style.display = 'none';
+              document.getElementById('icon-playing-' + id).style.display = 'inline';
+              audio.play()
+            } else {
+              playing = false
+            }
           } else {
             console.log('Playing sound: ' + id)
             playing = true
+            playingId = id
             document.getElementById('btn-play-' + id).className = 'btn btn-warning btn-lg btn-player';
             document.getElementById('icon-play-' + id).style.display = 'none';
             document.getElementById('icon-playing-' + id).style.display = 'inline';
