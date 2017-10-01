@@ -76,6 +76,15 @@
     <audio id="perlimpinpin" onended="onEnded('perlimpinpin')">
       <source src="sounds/perlimpinpin.mp3" type="audio/mpeg" />
     </audio>
+    <audio id="terrain-mine" onended="onEnded('terrain-mine')">
+      <source src="sounds/terrain-mine.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="bonbons" onended="onEnded('bonbons')">
+      <source src="sounds/bonbons.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="partouzeurs" onended="onEnded('partouzeurs')">
+      <source src="sounds/partouzeurs.mp3" type="audio/mpeg" />
+    </audio>
 
     <div class="useless-sound-wrapper">
       <div class="container">
@@ -247,6 +256,36 @@
                 <i id="icon-playing-perlimpinpin" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
                 <img src="images/perlimpinpin.jpg" alt="PERLIMPINPIN"/>
                 <p>Perlimpinpin</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-terrain-mine" type="button" class="btn btn-player" onclick="launchSound('terrain-mine')">
+                <i id="icon-play-terrain-mine" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-terrain-mine" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/terrain-mine.jpg" alt="TERRAIN-MINE"/>
+                <p>Terrain Miné</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-bonbons" type="button" class="btn btn-player" onclick="launchSound('bonbons')">
+                <i id="icon-play-bonbons" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-bonbons" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/bonbons.jpg" alt="BONBONS"/>
+                <p>Bonbons</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-partouzeurs" type="button" class="btn btn-player" onclick="launchSound('partouzeurs')">
+                <i id="icon-play-partouzeurs" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-partouzeurs" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/partouzeurs.jpg" alt="PARTOUZEURS"/>
+                <p>Partouzeurs de droite</p>
               </button>
             </div>
           </div>

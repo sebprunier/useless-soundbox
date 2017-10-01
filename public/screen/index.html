@@ -152,6 +152,30 @@
       <img src="../images/vedette.jpg" style="max-width: 800px;" />
     </div>
 
+    <audio id="terrain-mine" onended="onEnded('terrain-mine')">
+      <source src="../sounds/terrain-mine.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="terrain-mine-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Terrain Miné</h2>
+      <img src="../images/terrain-mine.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="bonbons" onended="onEnded('bonbons')">
+      <source src="../sounds/bonbons.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="bonbons-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Bonbons</h2>
+      <img src="../images/bonbons.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="partouzeurs" onended="onEnded('partouzeurs')">
+      <source src="../sounds/partouzeurs.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="partouzeurs-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Partouzeurs</h2>
+      <img src="../images/partouzeurs.jpg" style="max-width: 800px;" />
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var playing = false
