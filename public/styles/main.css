@@ -106,22 +106,34 @@ h1 span{
   margin:0;
   background:#000;
   color:#fff;
-  font-size:2.3vw;
+  font-size:1.6vw;
   line-height:2.3vw;
-  padding:1vw;
+  padding:0.8vw;
   border-bottom-left-radius:7px;
   border-bottom-right-radius:7px;
 }
+@media (min-width:576px) {
+  .btn-player p{
+    padding:8px;
+    font-size:10px;
+    line-height:12px;
+  }
+}
+@media (min-width:768px) {
+  .btn-player p{
+    font-size:14px;
+  }
+}
 @media (min-width:992px) {
   .btn-player p{
-    padding:5px;
-    font-size:18px;
+    padding:8px;
+    font-size:13px;
   }
 }
 @media (min-width:1200px) {
   .btn-player p{
-    font-size:22px;
-    padding:5px;
+    font-size:16px;
+    padding:8px;
   }
 }
 .btn-info:hover{
