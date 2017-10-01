@@ -144,6 +144,14 @@
       <img src="../images/venere.jpg" style="max-width: 800px;" />
     </div>
 
+    <audio id="vedette" onended="onEnded('vedette')">
+      <source src="../sounds/vedette.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="vedette-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Comme un aigle !</h2>
+      <img src="../images/vedette.jpg" style="max-width: 800px;" />
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var playing = false
