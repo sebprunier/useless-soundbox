@@ -73,6 +73,9 @@
     <audio id="vedette" onended="onEnded('vedette')">
       <source src="sounds/vedette.mp3" type="audio/mpeg" />
     </audio>
+    <audio id="perlimpinpin" onended="onEnded('perlimpinpin')">
+      <source src="sounds/perlimpinpin.mp3" type="audio/mpeg" />
+    </audio>
 
     <div class="useless-sound-wrapper">
       <div class="container">
@@ -234,6 +237,16 @@
                 <i id="icon-playing-vedette" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
                 <img src="images/vedette.jpg" alt="VEDETTE"/>
                 <p>Comme un aigle</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-perlimpinpin" type="button" class="btn btn-player" onclick="launchSound('perlimpinpin')">
+                <i id="icon-play-perlimpinpin" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-perlimpinpin" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/perlimpinpin.jpg" alt="PERLIMPINPIN"/>
+                <p>Perlimpinpin</p>
               </button>
             </div>
           </div>
