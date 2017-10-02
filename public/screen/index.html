@@ -176,6 +176,22 @@
       <img src="../images/partouzeurs.jpg" style="max-width: 800px;" />
     </div>
 
+    <audio id="gladiateurs" onended="onEnded('gladiateurs')">
+      <source src="../sounds/gladiateurs.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="gladiateurs-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Gladiateurs</h2>
+      <img src="../images/gladiateurs.jpg" style="max-width: 800px;" />
+    </div>
+
+    <audio id="monsieurtoutnu" onended="onEnded('monsieurtoutnu')">
+      <source src="../sounds/monsieurtoutnu.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="monsieurtoutnu-animation" class="text-center" style="margin-top: 50px; display: none;">
+      <h2>Monsieur tout nu</h2>
+      <img src="../images/monsieurtoutnu.jpg" style="max-width: 800px;" />
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var playing = false

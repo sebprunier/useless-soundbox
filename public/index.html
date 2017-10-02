@@ -85,6 +85,12 @@
     <audio id="partouzeurs" onended="onEnded('partouzeurs')">
       <source src="sounds/partouzeurs.mp3" type="audio/mpeg" />
     </audio>
+    <audio id="gladiateurs" onended="onEnded('gladiateurs')">
+      <source src="sounds/gladiateurs.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="monsieurtoutnu" onended="onEnded('monsieurtoutnu')">
+      <source src="sounds/monsieurtoutnu.mp3" type="audio/mpeg" />
+    </audio>
 
     <div class="useless-sound-wrapper">
       <div class="container">
@@ -286,6 +292,26 @@
                 <i id="icon-playing-partouzeurs" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
                 <img src="images/partouzeurs.jpg" alt="PARTOUZEURS"/>
                 <p>Partouzeurs de droite</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-gladiateurs" type="button" class="btn btn-player" onclick="launchSound('gladiateurs')">
+                <i id="icon-play-gladiateurs" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-gladiateurs" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/gladiateurs.jpg" alt="GLADIATEURS"/>
+                <p>Gladiateurs</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-monsieurtoutnu" type="button" class="btn btn-player" onclick="launchSound('monsieurtoutnu')">
+                <i id="icon-play-monsieurtoutnu" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-monsieurtoutnu" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/monsieurtoutnu.jpg" alt="MONSIEURTOUTNU"/>
+                <p>Monsieur tout nu</p>
               </button>
             </div>
           </div>
