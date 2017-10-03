@@ -94,6 +94,12 @@
     <audio id="plataoplomo" onended="onEnded('plataoplomo')">
       <source src="sounds/plataoplomo.mp3" type="audio/mpeg" />
     </audio>
+    <audio id="odile" onended="onEnded('odile')">
+      <source src="sounds/odile.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="shallnotpass" onended="onEnded('shallnotpass')">
+      <source src="sounds/shallnotpass.mp3" type="audio/mpeg" />
+    </audio>
 
     <div class="useless-sound-wrapper">
       <div class="container">
@@ -325,6 +331,26 @@
                 <i id="icon-playing-plataoplomo" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
                 <img src="images/plataoplomo.jpg" alt="PLATA O PLOMO"/>
                 <p>Plata o Plomo</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-odile" type="button" class="btn btn-player" onclick="launchSound('odile')">
+                <i id="icon-play-odile" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-odile" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/odile.jpg" alt="ODILE"/>
+                <p>Odile</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-shallnotpass" type="button" class="btn btn-player" onclick="launchSound('shallnotpass')">
+                <i id="icon-play-shallnotpass" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-shallnotpass" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/shallnotpass.jpg" alt="SHALL NOT PASS"/>
+                <p>Shall not pass</p>
               </button>
             </div>
           </div>
