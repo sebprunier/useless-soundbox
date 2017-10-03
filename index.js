@@ -19,6 +19,13 @@ if (REDIS_URL) {
   });
 }
 
+const trackSound = (soundId) => {
+  if (redisClient) {
+    console.log(`+1 for sound ${soundId}`)
+    redisClient.hincrby('soundbox:sounds_hits', soundId, 1, redisClient.print)
+  }
+}
+
 app.use(express.static('public'))
 
 app.get('/api/config', (req, res) => {
@@ -29,10 +36,7 @@ app.get('/api/config', (req, res) => {
 
 app.post('/api/track/play_sound/:id', (req, res) => {
   const soundId = req.params.id
-  if (redisClient) {
-    console.log(`+1 for sound ${soundId}`)
-    redisClient.hincrby('soundbox:sounds_hits', soundId, 1, redisClient.print)
-  }
+  trackSound(soundId)
   res.status(201).send()
 })
 
@@ -64,6 +68,7 @@ app.get('/api/play_sound/:id', (req, res) => {
   const soundId = req.params.id
   console.log(`Sending event to play sound: ${soundId}`)
   io.emit('play_sound', { id: soundId })
+  trackSound(soundId)
   res.status(201).send()
 })
 
