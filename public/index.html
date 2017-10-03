@@ -94,10 +94,16 @@
     <audio id="plataoplomo" onended="onEnded('plataoplomo')">
       <source src="sounds/plataoplomo.mp3" type="audio/mpeg" />
     </audio>
+    <audio id="odile" onended="onEnded('odile')">
+      <source src="sounds/odile.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="shallnotpass" onended="onEnded('shallnotpass')">
+      <source src="sounds/shallnotpass.mp3" type="audio/mpeg" />
+    </audio>
     <audio id="bitch" onended="onEnded('bitch')">
       <source src="sounds/bitch.mp3" type="audio/mpeg" />
     </audio>
-
+  
     <div class="useless-sound-wrapper">
       <div class="container">
         <div class="row">
@@ -333,11 +339,31 @@
           </div>
           <div class="col-3 col-lg-2">
             <div class="btn-container">
+              <button id="btn-play-odile" type="button" class="btn btn-player" onclick="launchSound('odile')">
+                <i id="icon-play-odile" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-odile" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/odile.jpg" alt="ODILE"/>
+                <p>Odile</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-shallnotpass" type="button" class="btn btn-player" onclick="launchSound('shallnotpass')">
+                <i id="icon-play-shallnotpass" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-shallnotpass" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/shallnotpass.jpg" alt="SHALL NOT PASS"/>
+                <p>Shall not pass</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
               <button id="btn-play-bitch" type="button" class="btn btn-player" onclick="launchSound('bitch')">
                 <i id="icon-play-bitch" class="fa fa-play" aria-hidden="true"></i>
                 <i id="icon-playing-bitch" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
-                <img src="images/bitch.png" alt="BITCH"/>
-                <p>BITCH</p>
+                <img src="images/bitch.png" alt="Bitch"/>
+                <p>Bitch</p>
               </button>
             </div>
           </div>
