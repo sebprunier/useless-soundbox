@@ -103,7 +103,10 @@
     <audio id="bitch" onended="onEnded('bitch')">
       <source src="sounds/bitch.mp3" type="audio/mpeg" />
     </audio>
-  
+    <audio id="quequette" onended="onEnded('quequette')">
+      <source src="sounds/quequette.mp3" type="audio/mpeg" />
+    </audio>
+
     <div class="useless-sound-wrapper">
       <div class="container">
         <div class="row">
@@ -364,6 +367,16 @@
                 <i id="icon-playing-bitch" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
                 <img src="images/bitch.png" alt="Bitch"/>
                 <p>Bitch</p>
+              </button>
+            </div>
+          </div>
+          <div class="col-3 col-lg-2">
+            <div class="btn-container">
+              <button id="btn-play-quequette" type="button" class="btn btn-player" onclick="launchSound('quequette')">
+                <i id="icon-play-quequette" class="fa fa-play" aria-hidden="true"></i>
+                <i id="icon-playing-quequette" class="fa fa-music" style="display: none;" aria-hidden="true"></i>
+                <img src="images/quequette.jpg" alt="Quequette"/>
+                <p>Quequette</p>
               </button>
             </div>
           </div>
